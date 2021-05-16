@@ -132,19 +132,19 @@ export default {
         {
           id: 2,
           title: "Stats",
-          slug: "my-network",
+          slug: "/rankings",
           featured: null,
           submenu: [
             {
               id: 1,
               title: "Ranking",
-              slug: "giyim",
+              slug: "/rankings",
               featured: "NEW",
             },
             {
               id: 2,
               title: "Activity",
-              slug: "giyim",
+              slug: "/activity",
               featured: "NEW",
             },
           ],
@@ -152,7 +152,7 @@ export default {
         {
           id: 3,
           title: "Resources",
-          slug: "my-network",
+          slug: "/resources",
           featured: null,
           submenu: [
             {

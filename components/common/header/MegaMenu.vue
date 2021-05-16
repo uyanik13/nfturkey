@@ -34,7 +34,9 @@
               class="py-1 border-b-1 border-gray-300 w-full"
             >
               <a
-                :href="submenu.slug"
+                :href="
+                  menu.id === 1 ? `/collection/` + submenu.slug : submenu.slug
+                "
                 class="flex group mr-4"
                 @keydown.esc.exact="hideMenu"
                 @keydown.tab.exact="focusNext(false)"

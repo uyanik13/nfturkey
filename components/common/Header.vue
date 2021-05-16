@@ -10,13 +10,15 @@
         class="mx-auto sm:px-2 lg:px-24 py-4 mb-2 flex items-center justify-between border-b-default lg:border-none border-gray-300"
       >
         <!-- LOGO -->
-        <div id="logo" class="flex w-28 lg:w-64 mx-8">
-          <img
-            class="w-12 h-12"
-            src="https://opensea.io/static/images/logos/opensea-logo.png"
-          />
-          <p class="mt-2 ml-2 text-5.5 font-raleway font-bold">NFTurkey</p>
-        </div>
+        <NuxtLink to="/">
+          <div id="logo" class="flex w-28 lg:w-64 mx-8">
+            <img
+              class="w-12 h-12"
+              src="https://opensea.io/static/images/logos/opensea-logo.png"
+            />
+            <p class="mt-2 ml-2 text-5.5 font-raleway font-bold">NFTurkey</p>
+          </div>
+        </NuxtLink>
 
         <div id="search" class="lg:w-6/12 sm:w-full">
           <search-component />
@@ -73,7 +75,7 @@ export default {
             {
               id: 1,
               title: "All NFTs",
-              slug: "giyim",
+              slug: "all",
               icon: require("~/assets/images/icons/all-nft.svg"),
               featured: "NEW",
             },
@@ -81,49 +83,49 @@ export default {
               id: 2,
               title: "New",
               icon: require("~/assets/images/icons/new.svg"),
-              slug: "Art",
+              slug: "new",
             },
             {
               id: 3,
               title: "Art",
               icon: require("~/assets/images/icons/art.svg"),
-              slug: "Art",
+              slug: "art",
             },
             {
               id: 4,
               title: "Domain Names",
               icon: require("~/assets/images/icons/domain-registration.svg"),
-              slug: "Art",
+              slug: "domain-names",
             },
             {
               id: 5,
               title: "Virtual Worlds",
               icon: require("~/assets/images/icons/virtual.svg"),
-              slug: "Art",
+              slug: "virtual-worlds",
             },
             {
               id: 6,
               title: "Trading Cards",
               icon: require("~/assets/images/icons/trading-card.svg"),
-              slug: "Art",
+              slug: "trading-cards",
             },
             {
               id: 7,
               title: "Collectibles",
               icon: require("~/assets/images/icons/collectibles.svg"),
-              slug: "Art",
+              slug: "collectibles",
             },
             {
               id: 8,
               title: "Sports",
               icon: require("~/assets/images/icons/sports.svg"),
-              slug: "Art",
+              slug: "sports",
             },
             {
               id: 9,
               title: "Utility",
               icon: require("~/assets/images/icons/utility.svg"),
-              slug: "Art",
+              slug: "utility",
             },
           ],
         },

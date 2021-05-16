@@ -63,7 +63,16 @@
               class="flex flex-col flex-no wrap sm:table-row mb-2 sm:mb-0"
             >
               <td class="border-grey-light border hover:bg-gray-100 p-3">
-                {{ item.node.name }}
+                <div class="flex items-center w-48">
+                  <img
+                    :src="item.node.imageUrl"
+                    :alt="item.node.name"
+                    class="w-10 h-10 rounded-full mr-2"
+                  />
+                  <p class="whitespace-normal">
+                    {{ item.node.name }}
+                  </p>
+                </div>
               </td>
               <td
                 class="border-grey-light border hover:bg-gray-100 p-3 truncate"

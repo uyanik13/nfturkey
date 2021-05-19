@@ -101,7 +101,7 @@ export default {
 
 
   proxy: {
-    '/api/': 'http://api.evdetemizlikvar.com',
+    '/api/': '/',
   },
 
   // Modules: https://go.nuxtjs.dev/config-modules

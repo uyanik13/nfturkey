@@ -2,17 +2,12 @@
   <div class="font-raleway bg-white">
     <client-only>
       <profile-header />
-      <div class="flex lg:w-full">
-        <div class="lg:w-3/12 border-1 border-gray-400">
-          <status-accordion />
-          <price-accordion />
-          <collection-accordion />
-          <chains-accordion />
-          <on-sale-in-accordion />
-        </div>
-        <div class="lg:w-9/12">
-          <div class="w-full px-4 border-1 border-gray-400">
-            <wallet-items />
+      <div class="w-full px-4 border-1 border-gray-400">
+        <div class="flex flex-col">
+          <div
+            class="flex flex-col justify-center items-center border-1 border-gray-300 rounded-lg h-64 my-2"
+          >
+            <p class="text-7 font-bold">You haven't favorited any items yet</p>
           </div>
         </div>
       </div>
@@ -33,7 +28,7 @@ import PriceAccordion from "@/components/account/price-accordion.vue";
 import CollectionAccordion from "@/components/account/collection-accordion.vue";
 import ChainsAccordion from "@/components/account/chains-accordion.vue";
 import OnSaleInAccordion from "@/components/account/on-sale-in-accordion.vue";
-import WalletItems from "@/components/account/wallet-items.vue";
+import AccountActivityTradingHistory from "@/components/account/account-activity-trading-history.vue";
 import ProfileHeader from "@/components/account/profile-header.vue";
 
 export default defineComponent({
@@ -46,7 +41,7 @@ export default defineComponent({
     CollectionAccordion,
     ChainsAccordion,
     OnSaleInAccordion,
-    WalletItems,
+    AccountActivityTradingHistory,
     ProfileHeader,
   },
   setup() {
@@ -54,4 +49,3 @@ export default defineComponent({
   },
 });
 </script>
-

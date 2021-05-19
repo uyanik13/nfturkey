@@ -2,17 +2,14 @@
   <div class="font-raleway bg-white">
     <client-only>
       <profile-header />
-      <div class="flex lg:w-full">
+      <div class="flex lg:w-full min-h-screen">
         <div class="lg:w-3/12 border-1 border-gray-400">
-          <status-accordion />
-          <price-accordion />
           <collection-accordion />
-          <chains-accordion />
-          <on-sale-in-accordion />
         </div>
         <div class="lg:w-9/12">
           <div class="w-full px-4 border-1 border-gray-400">
-            <wallet-items />
+            <account-offers-made-history />
+            <account-offers-received-history />
           </div>
         </div>
       </div>
@@ -33,7 +30,8 @@ import PriceAccordion from "@/components/account/price-accordion.vue";
 import CollectionAccordion from "@/components/account/collection-accordion.vue";
 import ChainsAccordion from "@/components/account/chains-accordion.vue";
 import OnSaleInAccordion from "@/components/account/on-sale-in-accordion.vue";
-import WalletItems from "@/components/account/wallet-items.vue";
+import AccountOffersHistoryMade from "@/components/account/account-offers-made-history.vue";
+import AccountOffersHistoryReceived from "@/components/account/account-offers-received-history.vue";
 import ProfileHeader from "@/components/account/profile-header.vue";
 
 export default defineComponent({
@@ -46,7 +44,8 @@ export default defineComponent({
     CollectionAccordion,
     ChainsAccordion,
     OnSaleInAccordion,
-    WalletItems,
+    AccountOffersHistoryMade,
+    AccountOffersHistoryReceived,
     ProfileHeader,
   },
   setup() {
@@ -54,4 +53,3 @@ export default defineComponent({
   },
 });
 </script>
-

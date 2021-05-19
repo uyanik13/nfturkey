@@ -13,7 +13,7 @@
                 :src="require('~/assets/images/icons/star.svg')"
                 alt=""
               />
-              Event Type
+              Status
             </span>
             <div
               class="rounded-full border border-grey w-7 h-7 flex items-center justify-center"
@@ -60,58 +60,58 @@
               <div class="flex flex-col justify-start pt-4 px-4">
                 <div class="flex my-1">
                   <button
-                    @click="listings = !listings"
-                    :class="listings ? 'bg-indigo-600 text-white' : ''"
+                    @click="buyNow = !buyNow"
+                    :class="buyNow ? 'bg-indigo-600 text-white' : ''"
                     class="focus:outline-none border-1 w-36 text-left border-gray-300 font-bold text-black bg-white py-2 px-4 rounded-lg whitespace-nowrap"
                   >
-                    Listings
+                    Buy Now
                     <t-checkbox
                       v-show="false"
-                      name="listings"
-                      value="listings"
-                      v-model="listings"
+                      name="buyNow"
+                      value="buyNow"
+                      v-model="buyNow"
                     />
                   </button>
 
                   <button
-                    @click="sales = !sales"
-                    :class="sales ? 'bg-blue-900 text-white' : 'bg-white'"
+                    @click="onAuction = !onAuction"
+                    :class="onAuction ? 'bg-blue-900 text-white' : 'bg-white'"
                     class="focus:outline-none border-1 mx-2 w-36 text-left border-gray-300 font-bold text-black py-2 px-4 rounded-lg whitespace-nowrap"
                   >
-                    Sales
+                    On Auction
                     <t-checkbox
                       v-show="false"
-                      name="sales"
-                      value="sales"
-                      v-model="sales"
+                      name="onAuction"
+                      value="onAuction"
+                      v-model="onAuction"
                     />
                   </button>
                 </div>
                 <div class="flex my-1">
                   <button
-                    @click="bids = !bids"
-                    :class="bids ? 'bg-green-600 text-white' : ''"
+                    @click="newItem = !newItem"
+                    :class="newItem ? 'bg-green-600 text-white' : ''"
                     class="focus:outline-none border-1 w-36 text-left border-gray-300 font-bold text-black bg-white py-2 px-4 rounded-lg whitespace-nowrap"
                   >
-                    Bids
+                    New
                     <t-checkbox
                       v-show="false"
-                      name="bids"
-                      value="bids"
-                      v-model="bids"
+                      name="newItem"
+                      value="newItem"
+                      v-model="newItem"
                     />
                   </button>
                   <button
-                    @click="transfers = !transfers"
-                    :class="transfers ? 'bg-red-600 text-white' : ''"
+                    @click="hasOffers = !hasOffers"
+                    :class="hasOffers ? 'bg-red-600 text-white' : ''"
                     class="focus:outline-none border-1 mx-2 w-36 text-left border-gray-300 font-bold text-black bg-white py-2 px-4 rounded-lg whitespace-nowrap"
                   >
-                    Transfers
+                    Has Offers
                     <t-checkbox
                       v-show="false"
-                      name="transfers"
-                      value="transfers"
-                      v-model="transfers"
+                      name="hasOffers"
+                      value="hasOffers"
+                      v-model="hasOffers"
                     />
                   </button>
                 </div>
@@ -125,10 +125,7 @@
 </template>
 
 <script>
-import {
-  defineComponent,
-  ref,
-} from "@nuxtjs/composition-api";
+import { defineComponent, ref } from "@nuxtjs/composition-api";
 
 export default defineComponent({
   head: {},
@@ -140,12 +137,12 @@ export default defineComponent({
   },
   setup() {
     const showContent = ref(true);
-    const listings = ref(false);
-    const sales = ref(false);
-    const bids = ref(false);
-    const transfers = ref(false);
+    const buyNow = ref(false);
+    const onAuction = ref(false);
+    const newItem = ref(false);
+    const hasOffers = ref(false);
 
-    return { showContent, listings, sales, bids, transfers };
+    return { showContent, buyNow, onAuction, newItem, hasOffers };
   },
 });
 </script>

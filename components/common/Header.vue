@@ -196,14 +196,14 @@ export default {
         {
           id: 4,
           title: "My Profile",
-          slug: "my-network",
+          slug: "/account",
           icon: require("~/assets/images/icons/user.svg"),
           featured: null,
           submenu: [
             {
               id: 1,
               title: "My Profile",
-              slug: "giyim",
+              slug: "/account",
               featured: "NEW",
             },
             {

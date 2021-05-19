@@ -56,7 +56,7 @@ export default {
       imports: [{
           set: '@fortawesome/free-solid-svg-icons',
           icons: ['faLightbulb', 'faCartArrowDown', 'faShoppingCart', 'faSearch', 'faUserCircle', 'faHeart', 'faWindowClose',
-            'faTrash', 'faArrowRight', 'faRocket', 'faCreditCard', 'faEnvelope', 'faGift', 'faWallet', 'faEye'
+            'faTrash', 'faArrowRight', 'faRocket', 'faCreditCard', 'faEnvelope', 'faGift', 'faWallet', 'faEye', 'faCopy', 'faEdit'
           ]
         },
         {

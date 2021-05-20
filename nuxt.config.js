@@ -1,3 +1,4 @@
+const path = require('path')
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -56,12 +57,13 @@ export default {
       imports: [{
           set: '@fortawesome/free-solid-svg-icons',
           icons: ['faLightbulb', 'faCartArrowDown', 'faShoppingCart', 'faSearch', 'faUserCircle', 'faHeart', 'faWindowClose',
-            'faTrash', 'faArrowRight', 'faRocket', 'faCreditCard', 'faEnvelope', 'faGift', 'faWallet', 'faEye', 'faCopy', 'faEdit'
+            'faTrash', 'faArrowRight', 'faRocket', 'faCreditCard', 'faEnvelope', 'faGift', 'faWallet', 'faEye', 'faCopy', 'faEdit',
+            'faCog', 'faBell', 'faBellSlash', 'faShareSquare', 'faCircle'
           ]
         },
         {
           set: '@fortawesome/free-brands-svg-icons',
-          icons: ['faGithub', 'faFacebook']
+          icons: ['faGithub', 'faFacebook', ]
         },
         {
           set: '@fortawesome/free-regular-svg-icons',
@@ -75,7 +77,7 @@ export default {
   tailwindcss: {
     cssPath: '~/assets/css/plugins/tailwind.css',
     configPath: '~/tailwind.config.js',
-    exposeConfig: true,
+    exposeConfig: false,
     config: {},
     viewer: true
   },
@@ -108,18 +110,19 @@ export default {
   modules: [
     //'nuxt-i18n',
     '@nuxtjs/axios',
-    // https://nuxtjs.org/faq/http-proxy
     '@nuxtjs/proxy'
   ],
 
   //i18n: {},
 
+
+
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     transpile: ["vee-validate/dist/rules"],
-    /*
-     ** You can extend webpack config here
-     */
+
+
+
     extend(config, ctx) {}
   }
 }

@@ -481,7 +481,7 @@ module.exports = {
     alignContent: ['responsive'],
     alignItems: ['responsive'],
     alignSelf: ['responsive'],
-    animation: ['responsive','motion-safe'],
+    animation: ['responsive', 'motion-safe'],
     appearance: ['responsive'],
     backgroundAttachment: ['responsive'],
     backgroundClip: ['responsive'],
@@ -600,5 +600,5 @@ module.exports = {
   corePlugins: {
 
   },
-  plugins: [],
+  plugins: []
 }

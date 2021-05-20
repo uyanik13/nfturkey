@@ -40,26 +40,20 @@
     <div>
       <MobileBottomMenu />
     </div>
-
-    <login-register-modal
-      @closeLoginRegisterModal="closeLoginRegisterModal"
-      :showModal="showLoginModal"
-    />
-    <side-cart @closeSideCart="closeSideCart" :showSideCart="isShowSideCart" />
   </header>
 </template>
 <script>
 import MobileBottomMenu from "./MobileBottomMenu.vue";
-import LoginRegisterModal from "@/components/widgets/login-register-modal";
-import SideCart from "@/components/widgets/side-cart";
+import SearchComponent from "@/components/common/header/SearchComponent.vue";
+import MegaMenu from "@/components/common/header/MegaMenu.vue";
 import { mapGetters } from "vuex";
 
 export default {
   name: "Header",
   components: {
     MobileBottomMenu,
-    LoginRegisterModal,
-    SideCart,
+    MegaMenu,
+    SearchComponent,
   },
   data() {
     return {
@@ -209,13 +203,13 @@ export default {
             {
               id: 2,
               title: "My Collections",
-              slug: "giyim",
+              slug: "/account/",
               featured: "NEW",
             },
             {
               id: 3,
               title: "My Favorites",
-              slug: "giyim",
+              slug: "/account/favorites",
               featured: "NEW",
             },
             {

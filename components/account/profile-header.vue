@@ -2,8 +2,8 @@
   <div class="font-raleway w-full">
     <div class="w-full">
       <div class="relative">
-        <div class="w-full static flex flex-col items-center pb-16">
-          <div class="w-full flex flex-col items-center pb-8">
+        <div class="w-full static flex flex-col pb-16">
+          <div class="w-full flex flex-col pb-8">
             <div class="relative inset-x-0"></div>
             <div
               class="bg-gray-400 relative shadow-xl w-5/6 md:w-4/6 lg:w-full xl:w-full mx-auto py-24"
@@ -20,7 +20,23 @@
               </div>
             </div>
           </div>
-          <div class="flex flex-col items-center pt-4">
+
+          <div class="flex justify-end items-end">
+            <button
+              v-tooltip="'Settings'"
+              class="border-1 border-gray-300 rounded-lg px-3 py-3 mr-3 focus:outline-none"
+            >
+              <fa :icon="['fas', 'cog']" class="text-5 text-gray-700" />
+            </button>
+            <button
+              v-tooltip="'Share'"
+              class="border-1 border-gray-300 rounded-lg px-3 py-3 mr-6 focus:outline-none"
+            >
+              <fa :icon="['fas', 'arrow-right']" class="text-5 text-gray-700" />
+            </button>
+          </div>
+
+          <div class="flex flex-col items-center">
             <h2 class="font-bold text-6 lg:text-10 text-gray-900">
               {{
                 account.user.publicUsername

@@ -8,5 +8,59 @@
 
 @layer utilities {
 
+
+    .custom-input{
+      @apply  w-full text-sm rounded-lg border-1 border-gray-400 px-2 pl-10 py-3 focus:outline-none focus:ring-1 ;
+    }
+    button{
+      @apply focus:outline-none;
+    }
+    label{
+      @apply block font-bold tracking-wide text-4.5 my-1;
+    }
+    .btn-primary {
+      @apply transition focus:outline-none font-bold duration-500 ease-in-out bg-primary hover:bg-secondary text-white text-5 py-3 px-12 rounded-lg;
+    }
+    .btn-secondary{
+      @apply transition focus:outline-none font-bold duration-500 ease-in-out bg-secondary hover:bg-primary text-white text-5 py-3 px-12 rounded-lg;
+    }
+
+    .with-border{
+      @apply border-1 border-gray-200 rounded-sm;
+    }
+
+    .item-center{
+      @apply flex justify-items-center items-center;
+    }
+
+    .toggle-checkbox:checked {
+      @apply: right-0 border-green-400;
+      right: 0;
+      border-color: #68D391;
+    }
+    .toggle-checkbox:checked + .toggle-label {
+      @apply: bg-green-400;
+      background-color: #68D391;
+    }
+
+
 }
 
+
+@layer base {
+    h1{
+      @apply text-8 font-bold;
+    }
+    h2{
+      @apply text-7 font-bold;
+    }
+    h3{
+      @apply text-6 font-bold;
+    }
+    h4{
+      @apply text-5 font-semibold;
+    }
+    h5{
+      @apply text-4.5 font-semibold;
+    }
+}

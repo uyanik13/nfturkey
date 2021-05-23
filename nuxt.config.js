@@ -1,4 +1,3 @@
-const path = require('path')
 export default {
   // Global page headers: https://go.nuxtjs.dev/config-head
   head: {
@@ -41,6 +40,7 @@ export default {
     "~/plugins/mixin-utils.js",
     "~/plugins/vue-tailwind.js",
     "~/plugins/vue-tooltip.js",
+    "~/plugins/provide-apollo-client.js",
     //"~/plugins/i18n.js"
   ],
 
@@ -74,6 +74,39 @@ export default {
 
   ],
 
+
+
+  // Modules: https://go.nuxtjs.dev/config-modules
+  modules: [
+    //'nuxt-i18n',
+    '@nuxtjs/apollo',
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
+  ],
+
+  apollo: {
+    // required
+    clientConfigs: {
+      default: {
+        // required
+        httpEndpoint: process.env.API_URL || 'http://localhost:3001/graphql',
+        //browserHttpEndpoint: '/graphql',
+        wsEndpoint: null,
+        persisting: false,
+        tokenName: 'AUTH_TOKEN',
+        ssr: false,
+        httpLinkOptions: {
+          fetchOptions: {
+            mode: 'no-cors' //Cors Needed for external Cross origins, need to allow headers from server
+          },
+          credentials: "include" //must be omit to support application/json content type
+        }
+      },
+
+    }
+  },
+
+
   tailwindcss: {
     cssPath: '~/assets/css/plugins/tailwind.css',
     configPath: '~/tailwind.config.js',
@@ -103,15 +136,9 @@ export default {
 
 
   proxy: {
-    '/api/': '/',
+    'api': 'http://localhost:3001/api'
   },
 
-  // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [
-    //'nuxt-i18n',
-    '@nuxtjs/axios',
-    '@nuxtjs/proxy'
-  ],
 
   //i18n: {},
 

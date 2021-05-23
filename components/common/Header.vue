@@ -215,7 +215,7 @@ export default {
             {
               id: 4,
               title: "My Account Settings",
-              slug: "giyim",
+              slug: "account/settings",
               featured: "NEW",
             },
           ],

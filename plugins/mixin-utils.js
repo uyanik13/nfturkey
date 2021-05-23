@@ -1,51 +1,54 @@
-
 import Vue from 'vue'
-import { mapGetters } from 'vuex'
+import {
+  mapGetters
+} from 'vuex'
+
+
 
 Vue.mixin({
-  data (){
+  data() {
 
     return {
 
     };
   },
-  computed : {
+  computed: {
     ...mapGetters({
-        cart: 'cart/getCart',
-        user: 'auth/user',
-        auth: 'auth/isAuthenticated',
+      cart: 'cart/getCart',
+      user: 'auth/user',
+      auth: 'auth/isAuthenticated',
     }),
 
   },
   methods: {
-    dateConverter(date){
+    dateConverter(date) {
       let unixTime = Date.parse(date)
-      let newDate =  new Date(unixTime)
-      const utcDate = newDate.toLocaleString('tr-TR', { timeZone: 'Europe/istanbul' })
+      let newDate = new Date(unixTime)
+      const utcDate = newDate.toLocaleString('tr-TR', {
+        timeZone: 'Europe/istanbul'
+      })
       return utcDate
     },
-    showLoading(value){
-      if(value){
+    showLoading(value) {
+      if (value) {
         this.$notiflix.Loading.Hourglass('Yukleniyor...');
-      }else{
+      } else {
         this.$notiflix.Loading.Remove();
       }
     },
-    copyToClipBoard(text){
+    copyToClipBoard(text) {
       var dummy = document.createElement("input");
-          document.body.appendChild(dummy);
-          dummy.setAttribute('value', text);
-          dummy.select();
-          document.execCommand("copy");
-          document.body.removeChild(dummy);
-     this.$notiflix.Notify.Success('Başarıyla kopyalandı');
+      document.body.appendChild(dummy);
+      dummy.setAttribute('value', text);
+      dummy.select();
+      document.execCommand("copy");
+      document.body.removeChild(dummy);
+      this.$notiflix.Notify.Success('Başarıyla kopyalandı');
 
     }
 
   },
-  mounted () {
+  mounted() {
 
   }
 })
-
-

@@ -35,8 +35,78 @@
             </ul>
           </div>
         </div>
-        <div class="lg:w-9/12">
+        <div class="lg:w-8/12">
           <div class="w-full px-4 border-1 border-gray-400 min-h-screen">
+            <div class="lg:p-12" v-if="menuItems[0].active">
+              <section class="shadow bg-gray-200">
+                <article class="border-b">
+                  <div class="border-transparent">
+                    <header
+                      class="flex justify-between items-center p-4 pl-2 pr-8 cursor-pointer select-none bg-gray-100 border-1 border-gray-300 rounded-lg"
+                    >
+                      <span class="flex text-gray-800 font-bold text-4.5"
+                        ><fa
+                          :icon="['fas', 'wallet']"
+                          class="text-6 text-gray-600 mx-2 mt-0.5"
+                        />
+                        <p class="text-5">Balance</p>
+                      </span>
+                    </header>
+                    <div>
+                      <div
+                        class="bg-gray-100 border-1 border-gray-300 rounded-md"
+                      >
+                        <div
+                          class="flex flex-col justify-items-center items-center my-2 p-2"
+                        >
+                          <p>Total Balance</p>
+                          <h4>$0.00 USD</h4>
+                          <button
+                            @click="$refs.add_funds.show()"
+                            class="btn-primary"
+                          >
+                            Add Funds
+                          </button>
+                          <t-modal
+                            ref="add_funds"
+                            header="Add ETH to your wallet"
+                          >
+                            <div class="flex flex-col space-y-2">
+                              <p>
+                                Select one of the options to deposit ETH to your
+                                wallet
+                              </p>
+                              <div>
+                                <button class="btn-secondary">
+                                  Deposit from an Exchange
+                                </button>
+                              </div>
+                              <div>
+                                <button class="btn-secondary">
+                                  Buy with card
+                                </button>
+                              </div>
+                            </div>
+                            <template v-slot:footer>
+                              <div class="flex justify-between">
+                                <t-button
+                                  @click="$refs.add_funds.hide()"
+                                  type="button"
+                                >
+                                  Cancel
+                                </t-button>
+                                <t-button type="button"> Ok </t-button>
+                              </div>
+                            </template>
+                          </t-modal>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </section>
+            </div>
+
             <div class="lg:p-12" v-if="menuItems[1].active">
               <section class="shadow bg-gray-200">
                 <article class="border-b">
@@ -274,7 +344,7 @@ export default defineComponent({
         title: "Wallet",
         icon: require("~/assets/images/icons/wallet.svg"),
         active: false,
-        disabled: true,
+        disabled: false,
       },
       {
         id: 2,
